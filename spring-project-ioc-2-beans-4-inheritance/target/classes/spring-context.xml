@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- inherit type one -->
+    <!-- 加不加abstract = true 无关紧要-->
+    <bean id="inheritedTestBean" class="cn.argento.askia.beans.TestBean">
+        <property name="name" value="parent"/>
+        <property name="age" value="1"/>
+    </bean>
+
+    <bean id="inheritsWithDifferentClass" class="cn.argento.askia.beans.DerivedTestBean" parent="inheritedTestBean">
+        <!-- override method -->
+        <property name="age" value="25"/>
+        <property name="address" value="California"/>
+    </bean>
+
+    <!-- inherit type two -->
+    <!-- template for inherit bean -->
+    <!-- 必须要加上abstract="true"，因为没有指定类名 -->
+    <bean id="inheritedTestBean2" abstract="true">
+        <property name="name" value="parent"/>
+        <property name="age" value="1"/>
+    </bean>
+
+    <bean id="inheritsWithDifferentClass2" class="cn.argento.askia.beans.DerivedTestBean" parent="inheritedTestBean2">
+        <!-- override method -->
+        <property name="age" value="25"/>
+        <property name="address" value="California"/>
+    </bean>
+
+    <!-- 加不加abstract = true 都能实现Bean Definition Inheritance-->
+    <!-- 但实际上这里因为指定了类名，所以加上abstract="true"将无法实例化inheritedTestBean3，不加则可以实例化 -->
+    <bean id="inheritedTestBean3" class="cn.argento.askia.beans.TestBean">
+        <property name="name" value="parent"/>
+        <property name="age" value="1"/>
+    </bean>
+
+    <bean id="inheritsWithAnotherClass" class="cn.argento.askia.beans.DerivedTestBean2" parent="inheritedTestBean3">
+        <property name="address" value="California"/>
+        <property name="age" value="25"/>
+    </bean>
+
+</beans>
