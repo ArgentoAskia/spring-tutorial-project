@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- name 属性 -->
+    <bean id="user1" name="userOne,UserOne,user_one" class="cn.argento.askia.bean.User"></bean>
+    <bean name="userTwo;UserTwo;user_two" class="cn.argento.askia.bean.User"></bean>
+    <bean id="user3" name="userThree UserThree user_three" class="cn.argento.askia.bean.User"></bean>
+
+
+    <!--
+        Spring是如何起默认id的？
+    -->
+    <bean class="cn.argento.askia.bean.User"/>
+
+    <bean class="cn.argento.askia.bean.Good"/>
+    <bean class="cn.argento.askia.bean.Good"/>
+    <bean class="cn.argento.askia.bean.Good"/>
+
+
+    <!-- alisa起别名 -->
+    <alias name="user_one" alias="user"/>
+    <alias name="cn.argento.askia.bean.Good#0" alias="good"/>
+
+</beans>
