@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 默认构造器创建 -->
+    <bean id="user" class="cn.argento.askia.bean.User"></bean>
+
+    <!--
+        静态工厂方法创建：
+            class：              需要填静态工厂类的全限定类名
+            factory-method：     需要填写静态创建方法
+    -->
+    <bean id="static-factory-method-create-user" class="cn.argento.askia.factory.UserStaticFactory" factory-method="createDefaultUser"></bean>
+
+    <!--
+        对象工厂方法创建：
+            1.需要创建对象工厂对象
+            2.然后在创建User的bean，指定factory-bean，值是对象工厂的id
+            3. factory-method指定要创建方法
+    -->
+    <bean id="factory-object" class="cn.argento.askia.factory.UserObjectFactory"></bean>
+    <bean id="object-factory-method-create-user" factory-bean="factory-object" factory-method="createUser"></bean>
+
+
+
+    <!-- 创建静态内部类对象：
+        直接使用outer类.inner类或者outer类$inner类即可
+    -->
+    <bean id="static-inner" class="cn.argento.askia.bean.Outer$StaticInner"></bean>
+
+    <!--
+        由于内部类对象的创建需要依赖外部类对象，因此一种简单的创建方式就是借助Java的内部类的原理
+        Java普通内部类会维护一个带一个参数的构造器，用于保存外部类的实例！
+    -->
+    <bean id="outer" class="cn.argento.askia.bean.Outer"></bean>
+    <bean id="inner" class="cn.argento.askia.bean.Outer.Inner">
+        <!--  第一个参数永远都是外部类对象 -->
+        <constructor-arg index="0" name="this$0" ref="outer"/>
+        <constructor-arg index="1" name="name" value="outer"/>
+    </bean>
+</beans>
