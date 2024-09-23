@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 原型模式（多例模式），每次获取的对象都是新创建的（在getBean的时候才会new） -->
+    <bean id="now" class="java.time.LocalDateTime" factory-method="now" scope="prototype"/>
+    <bean id="now2" class="java.time.LocalDateTime" factory-method="now" scope="singleton"/>
+
+
+</beans>
