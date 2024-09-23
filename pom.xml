@@ -17,6 +17,19 @@
         <module>spring-project-ioc-2-beans-5-lifecycle</module>
         <module>spring-project-ioc-2-beans-6-aware</module>
         <module>spring-project-ioc-2-beans-7-bean-post-processor</module>
+        <module>spring-project-ioc-3-configs-1-components-scan</module>
+        <module>spring-project-ioc-3-configs-2-dependency-injection-xml</module>
+        <module>spring-project-ioc-3-configs-3-dependency-injection-annotations</module>
+        <module>spring-project-ioc-3-configs-4-autowired-injection-xml-clash</module>
+        <module>spring-project-ioc-3-configs-5-autowired-injection-annotations-clash</module>
+        <module>spring-project-ioc-3-configs-6-depends-on</module>
+        <module>spring-project-ioc-3-configs-7-lazy-init</module>
+        <module>spring-project-ioc-3-configs-8-method-injection</module>
+        <module>spring-project-ioc-3-configs-9-full-lite-modes</module>
+        <module>spring-project-ioc-3-configs-A-recycle-dependence</module>
+        <module>spring-project-ioc-4-contexts-1-import</module>
+        <module>spring-project-ioc-4-contexts-2-lifecycle</module>
+        <module>spring-project-ioc-4-contexts-3-aware</module>
     </modules>
 
     <properties>
