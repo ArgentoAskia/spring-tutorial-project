@@ -7,7 +7,6 @@ ioc-beans-inheritance
 ioc-beans-bean-post-processor
 
 ioc-contexts-import
-ioc-contexts-api
 ioc-contexts-lifecycle
 ioc-context-aware
 ioc-context-Additional Capabilities of the ApplicationContext
@@ -40,6 +39,7 @@ aop-api
 // 下列的系列主要通过解析Spring的第三方包来学习
 framework-core-annotations（介绍core包常见的注解）
 framework-core-utils（介绍core包中常见工具类）
+framework-contexts-api（容器API）
 framework-jsr-annotations（jsr标准注解）
 framework-aot
 
