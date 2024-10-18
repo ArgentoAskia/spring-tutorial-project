@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Scope;
 
 import java.time.LocalDateTime;
 
+/**
+ * JavaConfig容器配置
+ */
 public class SpringCustomScopeJavaConfigContext {
 
     @Bean
