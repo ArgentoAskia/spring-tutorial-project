@@ -73,20 +73,26 @@ public class CustomScopeSpringContextTest {
      */
     @Test
     public void testDynamicScopeBean2() throws InterruptedException {
+        // 创建第一个线程
         new Thread("thread3"){
             @Override
             public void run() {
                 final Object now3 = annotationConfigApplicationContext.getBean("now3");
                 System.out.println(now3);
                 final Object now31 = annotationConfigApplicationContext.getBean("now3");
-                System.out.println(now3);
+                System.out.println(now31);
+                // 由于thread级别的Scope是基于单例Scope的基础上的，所以这里会输出true（因为是同一个对象，都是通过SimpleThreadScope2的get()方法获取到同一个对象）
                 System.out.println(now3 == now31);
             }
         }.start();
+        // 延迟几秒后，为了方面看出效果
         Thread.sleep(3000);
+        // 创建第二个线程
         new Thread("thread4"){
             @Override
             public void run() {
+                // 我们获取同样id的Bean，发现这个时候，得到的对象已经不是先前线程thread3中的now3了
+                // 这里的now3是一个新的对象，大家看该对象的输出可以看出来
                 final Object now3 = annotationConfigApplicationContext.getBean("now3");
                 System.out.println(now3);
                 final Object now31 = annotationConfigApplicationContext.getBean("now3");
