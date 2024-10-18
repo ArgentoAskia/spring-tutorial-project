@@ -28,6 +28,10 @@ public class CustomScopeSpringContextTest {
         annotationConfigApplicationContext.close();
     }
 
+    /**
+     * xml容器形式实现自定义Scope
+     * @throws InterruptedException -
+     */
     @Test
     public void testDynamicScopeBean() throws InterruptedException {
         final Object[] now30 = new Object[1];
@@ -63,6 +67,10 @@ public class CustomScopeSpringContextTest {
         System.out.println(now33[0] == now31[0]);
     }
 
+    /**
+     * Java-config类容器形式实现自定义Scope
+     * @throws InterruptedException -
+     */
     @Test
     public void testDynamicScopeBean2() throws InterruptedException {
         new Thread("thread3"){
