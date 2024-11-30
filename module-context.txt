@@ -9,8 +9,7 @@ ioc-beans-bean-post-processor
 ioc-contexts-import
 ioc-contexts-lifecycle
 ioc-context-aware
-ioc-context-Additional Capabilities of the ApplicationContext
-ioc-context-The BeanFactory API
+
 
 ioc-configs-components-scan
 ioc-configs-dependency-injection-xml
@@ -30,8 +29,7 @@ resources
 
 expressions-spring-expression-language
 
-aop-xml
-aop-annotation
+aop-xml-annotation
 aop-api
 
 
@@ -40,16 +38,28 @@ aop-api
 framework-core-annotations（介绍core包常见的注解）
 framework-core-utils（介绍core包中常见工具类）
 framework-contexts-api（容器API）
+    ioc-context-Additional Capabilities of the ApplicationContext
+    ioc-context-The BeanFactory API
 framework-jsr-annotations（jsr标准注解）
 framework-aot
-
 
 
 // spring-mvc framework
 // 补充
 
 // spring-boot framework
-// 补充
+spring-boot-project-1-create-project: 描述如何创建springboot 项目
+spring-boot-dev-1-bootstrap-starter-and-auto-configuration
+介绍启动类的使用，包括自定义banner等功能，参考（Core Features）、starter依赖、自动配置、application.properties的顺序问题等，以及如何查看配置选项。
+spring-boot-dev-2-framework-integration
+介绍基于spring-auto-configuration和starter基础上的各种中间件整合（子模块）：包括pring改进、MP、Mybatis等等等等的整合
+spring-boot-dev-3-creating-your-own-auto-configuration
+介绍如何自定义配置
+spring-boot-non-dev-1-packaging
+spring-boot-non-dev-2-profile
+spring-boot-non-dev-3-Hot Swapping
+spring-boot-non-dev-4-test-for-springboot
+spring-boot-non-dev-5-actuator-and-admin
 
 
 // spring-security
