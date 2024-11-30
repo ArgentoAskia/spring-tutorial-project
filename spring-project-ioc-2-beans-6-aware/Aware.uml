@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.springframework.beans.factory.Aware</OriginalElement>
+  <nodes>
+    <node x="897.0" y="131.0">org.springframework.context.ApplicationEventPublisherAware</node>
+    <node x="1551.0" y="131.0">org.springframework.context.MessageSourceAware</node>
+    <node x="3894.0" y="131.0">org.springframework.context.ResourceLoaderAware</node>
+    <node x="1914.0" y="0.0">org.springframework.beans.factory.Aware</node>
+    <node x="303.0" y="131.0">org.springframework.context.ApplicationStartupAware</node>
+    <node x="0.0" y="222.0">org.springframework.context.annotation.ConfigurationClassEnhancer.EnhancedConfiguration</node>
+    <node x="2121.0" y="131.0">org.springframework.jmx.export.notification.NotificationPublisherAware</node>
+    <node x="1848.0" y="131.0">org.springframework.context.EnvironmentAware</node>
+    <node x="30.0" y="131.0">org.springframework.beans.factory.BeanFactoryAware</node>
+    <node x="1338.0" y="131.0">org.springframework.context.annotation.ImportAware</node>
+    <node x="2514.0" y="131.0">org.springframework.context.EmbeddedValueResolverAware</node>
+    <node x="3228.0" y="131.0">org.springframework.context.weaving.LoadTimeWeaverAware</node>
+    <node x="2907.0" y="131.0">org.springframework.beans.factory.BeanClassLoaderAware</node>
+    <node x="660.0" y="131.0">org.springframework.beans.factory.BeanNameAware</node>
+    <node x="3537.0" y="131.0">org.springframework.context.ApplicationContextAware</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.springframework.context.ApplicationContextAware" target="org.springframework.beans.factory.Aware">
+      <point x="0.0" y="-20.5" />
+      <point x="3705.5" y="71.0" />
+      <point x="2021.0384615384614" y="71.0" />
+      <point x="46.53846153846143" y="20.5" />
+    </edge>
+    <edge source="org.springframework.context.annotation.ImportAware" target="org.springframework.beans.factory.Aware">
+      <point x="0.0" y="-20.5" />
+      <point x="1434.5" y="101.0" />
+      <point x="1955.8846153846152" y="101.0" />
+      <point x="-18.615384615384755" y="20.5" />
+    </edge>
+    <edge source="org.springframework.context.EmbeddedValueResolverAware" target="org.springframework.beans.factory.Aware">
+      <point x="0.0" y="-20.5" />
+      <point x="2700.5" y="101.0" />
+      <point x="1993.1153846153848" y="101.0" />
+      <point x="18.615384615384755" y="20.5" />
+    </edge>
+    <edge source="org.springframework.jmx.export.notification.NotificationPublisherAware" target="org.springframework.beans.factory.Aware">
+      <point x="0.0" y="-20.5" />
+      <point x="2307.5" y="111.0" />
+      <point x="1983.8076923076924" y="111.0" />
+      <point x="9.307692307692378" y="20.5" />
+    </edge>
+    <edge source="org.springframework.context.annotation.ConfigurationClassEnhancer.EnhancedConfiguration" target="org.springframework.beans.factory.BeanFactoryAware">
+      <point x="0.0" y="-20.5" />
+      <point x="0.0" y="20.5" />
+    </edge>
+    <edge source="org.springframework.context.MessageSourceAware" target="org.springframework.beans.factory.Aware">
+      <point x="0.0" y="-20.5" />
+      <point x="1689.5" y="111.0" />
+      <point x="1965.1923076923076" y="111.0" />
+      <point x="-9.307692307692378" y="20.5" />
+    </edge>
+    <edge source="org.springframework.context.ApplicationEventPublisherAware" target="org.springframework.beans.factory.Aware">
+      <point x="0.0" y="-20.5" />
+      <point x="1107.5" y="91.0" />
+      <point x="1946.5769230769229" y="91.0" />
+      <point x="-27.923076923077133" y="20.5" />
+    </edge>
+    <edge source="org.springframework.beans.factory.BeanClassLoaderAware" target="org.springframework.beans.factory.Aware">
+      <point x="0.0" y="-20.5" />
+      <point x="3057.5" y="91.0" />
+      <point x="2002.4230769230771" y="91.0" />
+      <point x="27.923076923077133" y="20.5" />
+    </edge>
+    <edge source="org.springframework.beans.factory.BeanNameAware" target="org.springframework.beans.factory.Aware">
+      <point x="0.0" y="-20.5" />
+      <point x="768.5" y="81.0" />
+      <point x="1937.269230769231" y="81.0" />
+      <point x="-37.230769230769056" y="20.5" />
+    </edge>
+    <edge source="org.springframework.context.ApplicationStartupAware" target="org.springframework.beans.factory.Aware">
+      <point x="0.0" y="-20.5" />
+      <point x="471.5" y="71.0" />
+      <point x="1927.9615384615386" y="71.0" />
+      <point x="-46.53846153846143" y="20.5" />
+    </edge>
+    <edge source="org.springframework.context.weaving.LoadTimeWeaverAware" target="org.springframework.beans.factory.Aware">
+      <point x="0.0" y="-20.5" />
+      <point x="3372.5" y="81.0" />
+      <point x="2011.730769230769" y="81.0" />
+      <point x="37.230769230769056" y="20.5" />
+    </edge>
+    <edge source="org.springframework.context.EnvironmentAware" target="org.springframework.beans.factory.Aware">
+      <point x="0.0" y="-20.5" />
+      <point x="0.0" y="20.5" />
+    </edge>
+    <edge source="org.springframework.context.ResourceLoaderAware" target="org.springframework.beans.factory.Aware">
+      <point x="0.0" y="-20.5" />
+      <point x="4038.5" y="61.0" />
+      <point x="2030.3461538461538" y="61.0" />
+      <point x="55.84615384615381" y="20.5" />
+    </edge>
+    <edge source="org.springframework.beans.factory.BeanFactoryAware" target="org.springframework.beans.factory.Aware">
+      <point x="0.0" y="-20.5" />
+      <point x="156.5" y="61.0" />
+      <point x="1918.6538461538462" y="61.0" />
+      <point x="-55.84615384615381" y="20.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.3133476088508208" x="2084.5000000000005" y="205.0" />
+  <SelectedNodes>
+    <node>org.springframework.context.ApplicationEventPublisherAware</node>
+    <node>org.springframework.context.MessageSourceAware</node>
+    <node>org.springframework.context.ApplicationStartupAware</node>
+    <node>org.springframework.context.annotation.ConfigurationClassEnhancer.EnhancedConfiguration</node>
+    <node>org.springframework.jmx.export.notification.NotificationPublisherAware</node>
+    <node>org.springframework.context.EnvironmentAware</node>
+    <node>org.springframework.beans.factory.BeanFactoryAware</node>
+    <node>org.springframework.context.annotation.ImportAware</node>
+    <node>org.springframework.context.EmbeddedValueResolverAware</node>
+    <node>org.springframework.context.weaving.LoadTimeWeaverAware</node>
+    <node>org.springframework.beans.factory.BeanClassLoaderAware</node>
+    <node>org.springframework.beans.factory.BeanNameAware</node>
+    <node>org.springframework.context.ApplicationContextAware</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
