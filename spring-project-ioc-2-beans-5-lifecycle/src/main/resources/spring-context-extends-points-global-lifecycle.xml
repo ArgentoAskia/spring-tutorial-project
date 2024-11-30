@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd"
+default-init-method="defaultInit" default-destroy-method="defaultDestroy">
+    <!--
+       0.可以指定default-init-method和default-destroy-method来实现统一管理初始化和销毁方法
+         这种全局的方式对无论是注解方式的bean还是XML方式的定义都起作用，属于全局初始化方法和全局销毁方法
+         后期bean标签中可以使用init-method和destroy-method覆盖这个方法,但是注解的形式却不能做到覆盖
+   -->
+    <bean id="user3GlobalLifeCycleCallback"
+          class="cn.argentoaskia.callback.extendpoints.globallifecycle.User3GlobalLifeCycleCallback"/>
+
+
+    <!-- 演示：init-method能够覆盖default-init-method和destroy-method覆盖default-destroy-method -->
+    <bean id="user3GlobalLifeCycleCallbackOverride"
+          class="cn.argentoaskia.callback.extendpoints.globallifecycle.User3GlobalLifeCycleCallback"
+    init-method="init" destroy-method="destroy"/>
+
+    <!-- 演示：注解扫描无法覆盖default-init-method和default-destroy-method,都会执行-->
+    <context:annotation-config/>
+    <context:component-scan base-package="cn.argentoaskia.callback.extendpoints.globallifecycle"/>
+</beans>
