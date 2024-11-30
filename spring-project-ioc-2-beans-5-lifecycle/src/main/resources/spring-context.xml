@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+    <bean id="date" class="java.util.Date"/>
+    <bean id="localDateTime" class="java.time.LocalDateTime" factory-method="now"/>
+    <!-- 1.采用LifeCycle接口管理bean的初始化和销毁 -->
+    <bean id="user3_1" class="cn.argentoaskia.callback.User3LifeCycleInterfaceCallback">
+        <property name="address" value="广州市"/>
+        <property name="age" value="30"/>
+        <property name="birthday" ref="date"/>
+        <property name="id" value="1"/>
+        <property name="name" value="Askia"/>
+        <property name="upload" ref="localDateTime"/>
+    </bean>
+
+    <!-- 2.采用XML-init-method属性和destroy-method属性管理bean的初始化和销毁 -->
+    <bean id="user3_2" class="cn.argentoaskia.callback.User3XMLLifeCycleCallback"
+    init-method="init" destroy-method="destroy">
+        <property name="address" value="江门市"/>
+        <property name="age" value="23"/>
+        <property name="birthday" ref="date"/>
+        <property name="id" value="2"/>
+        <property name="name" value="Askia"/>
+        <property name="upload" ref="localDateTime"/>
+    </bean>
+
+
+    <!-- 3.采用@PostConstruct、@PreDestroy实现初始化-->
+    <!-- 必须要有context:annotation-config, 否则@PostConstruct、@PreDestroy注解不生效-->
+<!--    <context:annotation-config/>-->
+    <!-- 处理@PostConstruct、@PreDestroy时，需要使用CommonAnnotationBeanPostProcessor，因此手动注册它-->
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+    <bean id="user3_3" class="cn.argentoaskia.callback.User3AnnotationLifeCycleCallback"/>
+
+
+
+
+</beans>
