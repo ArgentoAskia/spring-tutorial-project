@@ -32,6 +32,8 @@ public interface Aware {
 
 另外请注意，仅仅实现`Aware`接口本身并不提供任何默认功能。相反，必须显式进行处理，例如在 `org.springframework.beans.factory.config.BeanPostProcessor` 中。可以参考 `org.springframework.context.support.ApplicationContextAwareProcessor` 来了解如何处理特定的`*Aware`接口回调。
 
+最后，由于注册`Aware`相关的`Bean`在`xml`配置、`JavaConfig`配置和组件扫描中的方式基本相同，所以我们选择一种注册方式来讲解即可。
+
 ### BeanNameAware
 
 实现了`BeanNameAware`接口的`Bean`会获取到自身在`IoC`容器中的名字（或者`id`），如果`Bean`在执行的过程中需要处理`beanName`，则可以实现该接口，例如我们定义了一个`Bean`：
